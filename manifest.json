@@ -1,0 +1,25 @@
+{
+  "name": "leaf browser",
+  "manifest_version": 2,
+  "version": "0.1",
+  "description": "Leaf web browser",
+  "permissions": [
+    "activeTab",
+    "webNavigation",
+    "http://*/",
+    "https://*/"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "64": "icon64.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches":["https://*/*"],
+      "run_at": "document_end",
+      "css": ["style.css"],
+      "js": ["leaf.js"]
+    }
+  ]
+}
