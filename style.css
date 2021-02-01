@@ -1,4 +1,4 @@
-.mask {
+.lb-mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,7 +17,7 @@
   -webkit-mask-composite: intersect;
 }
 
-.show {
+.lb-mask.show {
   opacity: 1;
 }
 

@@ -1,22 +1,29 @@
 {
   "name": "leaf browser",
   "manifest_version": 2,
-  "version": "0.1",
+  "version": "0.2",
   "description": "Leaf web browser",
   "permissions": [
     "activeTab",
     "webNavigation",
+    "storage",
     "http://*/",
     "https://*/"
   ],
-  "icons": {
-    "16": "icon16.png",
-    "64": "icon64.png",
-    "128": "icon128.png"
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon16-off.png",
+      "64": "icon64-off.png",
+      "128": "icon128-off.png"
+    }
   },
   "content_scripts": [
     {
-      "matches":["https://*/*"],
+      "matches":["https://*/*", "http://*/*"],
       "run_at": "document_end",
       "css": ["style.css"],
       "js": ["leaf.js"]
